@@ -29,20 +29,18 @@ namespace _5_lab
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -50,17 +48,22 @@ namespace _5_lab
             // 
             // chart1
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chart1.Legends.Add(legend14);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
             this.chart1.Location = new System.Drawing.Point(442, 12);
             this.chart1.Name = "chart1";
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series14.Legend = "Legend1";
-            series14.Name = "s1";
-            this.chart1.Series.Add(series14);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Color = System.Drawing.Color.White;
+            series6.IsValueShownAsLabel = true;
+            series6.Label = "#PERCENT";
+            series6.Legend = "Legend1";
+            series6.LegendText = "#VALX";
+            series6.Name = "s1";
+            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(346, 271);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
@@ -75,13 +78,15 @@ namespace _5_lab
             this.No,
             this.product,
             this.value,
-            this.quantity,
-            this.price});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 31);
+            this.quantity});
+            this.dataGridView1.Location = new System.Drawing.Point(16, 31);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(293, 252);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(349, 252);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // numericUpDown1
@@ -126,64 +131,41 @@ namespace _5_lab
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(630, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // No
             // 
             this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.No.HeaderText = "№";
+            this.No.HeaderText = "№ п.п.";
             this.No.Name = "No";
             this.No.ReadOnly = true;
             this.No.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.No.Width = 24;
+            this.No.Width = 45;
             // 
             // product
             // 
-            this.product.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.product.FillWeight = 44.10998F;
             this.product.HeaderText = "Товар";
             this.product.Name = "product";
             this.product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.product.Width = 44;
             // 
             // value
             // 
-            this.value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.value.FillWeight = 82.47962F;
             this.value.HeaderText = "Цена";
             this.value.Name = "value";
             this.value.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.value.Width = 39;
             // 
             // quantity
             // 
-            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.quantity.FillWeight = 173.4104F;
             this.quantity.HeaderText = "Количество";
             this.quantity.Name = "quantity";
             this.quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.quantity.Width = 72;
-            // 
-            // price
-            // 
-            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.price.HeaderText = "Стоимость";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.price.Width = 68;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown1);
@@ -205,12 +187,10 @@ namespace _5_lab
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn product;
         private System.Windows.Forms.DataGridViewTextBoxColumn value;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }
 

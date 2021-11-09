@@ -52,29 +52,15 @@ namespace _5_lab
             {
                 if ((dataGridView1.Rows[i].Cells[1].Value != null) && (dataGridView1.Rows[i].Cells[2].Value != null) && (dataGridView1.Rows[i].Cells[3].Value != null))
                 {
+                    string fullNameOfProduct;
                     double price = 0.0;
                     int quantity = 0;
+                    double fullPriceOfProduct = 0.0;
                     Double.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out price);
                     Int32.TryParse(dataGridView1.Rows[i].Cells[3].Value.ToString(), out quantity);
-                    dataGridView1.Rows[i].Cells[4].Value = price * quantity;
-                    chart1.Series["s1"].Points.AddXY(dataGridView1.Rows[i].Cells[1].Value, price * quantity);
-                }
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e) // здесь кнопка, делает всё то, что и автоматом, потому что я сначала сделал кнопку, а потом копирнул в "интеракцию"
-        {
-            chart1.Series["s1"].Points.Clear();
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if ((dataGridView1.Rows[i].Cells[1].Value != null) && (dataGridView1.Rows[i].Cells[2].Value != null) && (dataGridView1.Rows[i].Cells[3].Value != null))
-                {
-                    double price = 0.0;
-                    int quantity = 0;
-                    Double.TryParse(dataGridView1.Rows[i].Cells[2].Value.ToString(), out price);
-                    Int32.TryParse(dataGridView1.Rows[i].Cells[3].Value.ToString(), out quantity);
-                    dataGridView1.Rows[i].Cells[4].Value = price * quantity;
-                    chart1.Series["s1"].Points.AddXY(dataGridView1.Rows[i].Cells[1].Value, price * quantity);
+                    fullPriceOfProduct = price * quantity;
+                    fullNameOfProduct = fullPriceOfProduct.ToString() + " " + dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    chart1.Series["s1"].Points.AddXY(fullNameOfProduct, fullPriceOfProduct);
                 }
             }
         }
