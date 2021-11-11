@@ -29,41 +29,48 @@ namespace _5_lab
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Exit = new System.Windows.Forms.Button();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Exit = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.columnChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columnChart)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
-            this.chart1.Location = new System.Drawing.Point(442, 12);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(16, 301);
             this.chart1.Name = "chart1";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.Color = System.Drawing.Color.White;
-            series6.IsValueShownAsLabel = true;
-            series6.Label = "#PERCENT";
-            series6.Legend = "Legend1";
-            series6.LegendText = "#VALX";
-            series6.Name = "s1";
-            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart1.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Color = System.Drawing.Color.White;
+            series1.IsValueShownAsLabel = true;
+            series1.Label = "#PERCENT";
+            series1.Legend = "Legend1";
+            series1.LegendText = "#VALX";
+            series1.Name = "1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(346, 271);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
@@ -88,6 +95,36 @@ namespace _5_lab
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.No.HeaderText = "№ п.п.";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.No.Width = 45;
+            // 
+            // product
+            // 
+            this.product.FillWeight = 44.10998F;
+            this.product.HeaderText = "Товар";
+            this.product.Name = "product";
+            this.product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // value
+            // 
+            this.value.FillWeight = 82.47962F;
+            this.value.HeaderText = "Цена";
+            this.value.Name = "value";
+            this.value.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // quantity
+            // 
+            this.quantity.FillWeight = 173.4104F;
+            this.quantity.HeaderText = "Количество";
+            this.quantity.Name = "quantity";
+            this.quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // numericUpDown1
             // 
@@ -123,7 +160,7 @@ namespace _5_lab
             // 
             // Exit
             // 
-            this.Exit.Location = new System.Drawing.Point(711, 415);
+            this.Exit.Location = new System.Drawing.Point(577, 87);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(77, 23);
             this.Exit.TabIndex = 8;
@@ -131,41 +168,56 @@ namespace _5_lab
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // No
+            // checkBox1
             // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.No.HeaderText = "№ п.п.";
-            this.No.Name = "No";
-            this.No.ReadOnly = true;
-            this.No.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.No.Width = 45;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(577, 40);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(133, 17);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Круговая диаграмма";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // product
+            // checkBox2
             // 
-            this.product.FillWeight = 44.10998F;
-            this.product.HeaderText = "Товар";
-            this.product.Name = "product";
-            this.product.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(577, 64);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(144, 17);
+            this.checkBox2.TabIndex = 13;
+            this.checkBox2.Text = "Столбчатая диаграмма";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // value
+            // columnChart
             // 
-            this.value.FillWeight = 82.47962F;
-            this.value.HeaderText = "Цена";
-            this.value.Name = "value";
-            this.value.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // quantity
-            // 
-            this.quantity.FillWeight = 173.4104F;
-            this.quantity.HeaderText = "Количество";
-            this.quantity.Name = "quantity";
-            this.quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            chartArea2.Name = "ChartArea1";
+            this.columnChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.columnChart.Legends.Add(legend2);
+            this.columnChart.Location = new System.Drawing.Point(410, 301);
+            this.columnChart.Name = "columnChart";
+            series2.ChartArea = "ChartArea1";
+            series2.IsValueShownAsLabel = true;
+            series2.Label = "#PERCENT";
+            series2.Legend = "Legend1";
+            series2.LegendText = "#VALX";
+            series2.Name = "S2";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.columnChart.Series.Add(series2);
+            this.columnChart.Size = new System.Drawing.Size(300, 300);
+            this.columnChart.TabIndex = 14;
+            this.columnChart.Text = "s1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(766, 612);
+            this.Controls.Add(this.columnChart);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown1);
@@ -176,6 +228,7 @@ namespace _5_lab
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columnChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +244,9 @@ namespace _5_lab
         private System.Windows.Forms.DataGridViewTextBoxColumn product;
         private System.Windows.Forms.DataGridViewTextBoxColumn value;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart columnChart;
     }
 }
 
